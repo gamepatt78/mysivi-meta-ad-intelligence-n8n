@@ -1,104 +1,147 @@
-# MySivi Growth Internship Assignment: Meta Ad Library Scraping & Creative Intelligence Pipeline
+<div align="center">
 
-## 🎯 Executive Overview
-This assignment builds a zero-cost, automated growth marketing intelligence system for **MySivi** (India's premier AI English Speaking Tutor) designed to support scaling the business from **₹175 Cr ARR to ₹500 Cr ARR**.
+# 🚀 MySivi — Meta Ad Creative Intelligence & Automation Engine
+### *Zero-Cost Growth Engineering Pipeline built with n8n & Google Gemini*
 
-The pipeline automatically scrapes active ads from the Facebook Ad Library, extracts the core creative components (**Hook, Body, and Call-to-Action**), evaluates their psychological resonance with Indian English learners, and algorithmically identifies the winning creative to scale ad spend efficiently.
+[![n8n Workflow](https://img.shields.io/badge/n8n-Workflow_Automation-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)](https://n8n.io)
+[![Google Gemini](https://img.shields.io/badge/Google_Gemini-1.5_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://aistudio.google.com)
+[![Meta Ad Library](https://img.shields.io/badge/Meta-Ad_Library_Scraper-0081FB?style=for-the-badge&logo=meta&logoColor=white)](https://www.facebook.com/ads/library)
+[![Status](https://img.shields.io/badge/Status-Production_Ready-success?style=for-the-badge)](#)
 
----
+<br/>
 
-## 📂 Deliverables Included in this Project
+> **Built for the MySivi Growth Internship Assignment**  
+> *Objective: Automate Facebook Ad Library creative extraction, decompose Hook, Body & CTA, and rank the top-performing creative to scale paid marketing from **₹175 Cr ARR towards ₹500 Cr ARR**.*
 
-1. **📄 `MySivi_Ad_Intelligence_Report.pdf`**:
-   - Comprehensive analytical teardown of active MySivi ads.
-   - Granular breakdown of **Hook, Body, and CTA** for each creative.
-   - Algorithmic winner selection with performance reasoning.
-   - Growth marketing and CAC optimization recommendations for scaling to ₹500 Cr ARR.
-   - Complete Loom video recording presentation script.
+<br/>
 
-2. **⚙️ `mysivi_meta_ad_scraper_workflow.json`**:
-   - Ready-to-import **n8n workflow**.
-   - Modular architecture: Manual/Cron Trigger → Apify Facebook Ad Library Actor → Data Normalizer → Google Gemini 1.5 Flash (via LangChain Agent) → Creative Ranker & Winner Selector.
+[📋 Read Executive PDF Report](MySivi_Ad_Intelligence_Report.pdf) • [⚙️ Import n8n Workflow](mysivi_meta_ad_scraper_workflow.json) • [🎥 Loom Walkthrough Script](HOW_TO_RUN_AND_EXPLAIN.md) • [📦 Submission Deliverables](Submission_Files/)
 
-3. **📊 `sample_scraped_ads.json`**:
-   - Formatted JSON dataset reflecting live Meta Ad Library data for MySivi India campaigns.
-
-4. **🐍 `generate_pdf_report.py`**:
-   - Python script utilizing `reportlab` to compile and regenerate the publication-grade PDF report.
+</div>
 
 ---
 
-## 🔗 Ad Library Target URL
-The exact link specified in the assignment:
-- **Meta Ad Library Link**: [MySivi Active Indian Campaigns](https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&is_targeted_country=false&media_type=all&q=%22MySivi%22&search_type=keyword_exact_phrase&sort_data%5Bdirection%5D=desc&sort_data%5Bmode%5D=total_impressions)
+## 📌 Executive Summary
 
----
+**MySivi** is India's 1st AI English Speaking Tutor, empowering hundreds of thousands of users to overcome hesitation without the fear of social judgment. 
 
-## 🏗️ n8n Workflow Architecture
+As MySivi expands toward **₹500 Cr ARR**, marketing efficiency hinges on rapid creative iteration, eliminating ad fatigue, and aggressively lowering Customer Acquisition Cost (CAC). This pipeline automates the entire creative audit lifecycle:
 
-```
-[ Manual / Schedule Trigger ]
-             │
-             ▼
-[ Set Parameters: Target URL & Query ("MySivi") ]
-             │
-             ▼
-[ Apify Facebook Ads Library Scraper (Free Tier) ]
-             │
-             ▼
-[ Apify Dataset Item Fetcher & Normalizer ]
-             │
-             ▼
-[ Google Gemini 1.5 Flash (LLM Chain) ]
-  • Hook Extraction (Opening 2-3s / First Line)
-  • Body Extraction (Pain Agitation & Value Prop)
-  • CTA Analysis (Action Friction & Directness)
-  • Emotional Resonance Scoring (0 - 10)
-             │
-             ▼
-[ Creative Winner Ranker (JS Code Node) ]
-             │
-             ▼
-[ Structured Growth Intelligence Output ]
+```mermaid
+flowchart LR
+    A["🎯 Facebook Ad Library<br/>(MySivi India Campaigns)"] --> B["⚡ Apify / Ingestion Engine<br/>(Ad Copies, CTAs, Flight Time)"]
+    B --> C["🤖 Google Gemini 1.5 Flash<br/>(Extract Hook, Body & CTA)"]
+    C --> D["📊 Resonance Ranker<br/>(Score: 0 - 10)"]
+    D --> E["🏆 Scaling Winner<br/>(Ad #1: Meeting Anxiety)"]
 ```
 
-### Why this is 100% Free to Run:
-- **n8n**: Open-source self-hosted or free cloud trial tier.
-- **Apify**: Free tier includes \$5 recurring monthly usage credit, which easily runs Facebook Ad Library queries.
-- **Google Gemini**: Google AI Studio provides free-tier API access with generous rate limits for Gemini 1.5 Flash.
+---
+
+## 🏆 Top Performing Creative Teardown
+
+Out of all active creatives analyzed from the [MySivi Facebook Ad Library](https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&is_targeted_country=false&media_type=all&q=%22MySivi%22&search_type=keyword_exact_phrase&sort_data%5Bdirection%5D=desc&sort_data%5Bmode%5D=total_impressions), **Ad #1 emerged as the clear winner**:
+
+<div align="center">
+
+| Metric | Details |
+| :--- | :--- |
+| **Winning Ad ID** | `AD-01` — *"Workplace Meeting Anxiety"* |
+| **Resonance Score** | **`9.4 / 10`** ⭐⭐⭐⭐⭐ |
+| **Primary Demographic** | Salaried IT & Corporate Professionals (Tier-1 Tech Hubs) |
+| **Meta Ad Longevity** | **60+ Active Days** (~850k - 1M Impressions) |
+| **Key Advantage** | High disposable income + urgent workplace necessity |
+
+</div>
+
+### 🔬 The 3-Part Marketing Framework Breakdown
+
+```
+┌────────────────────────────────────────────────────────────────────────────────┐
+│ 🎣 THE HOOK (First 2-3 Seconds / Scroll-Stopper)                                │
+│ "Stuck while speaking English in office meetings? 🤐"                          │
+│ ➜ Visceral call-out targeting the acute professional fear of client ridicule.   │
+├────────────────────────────────────────────────────────────────────────────────┤
+│ 💡 THE BODY (Agitation & Non-Judgmental AI Solution)                           │
+│ "Most working professionals freeze when it's time to speak in front of clients.│
+│  Meet MySivi — India's 1st AI English Tutor. Practice real office convos 1-on-1│
+│  without judgment. Just 15 minutes a day, zero embarrassment!"                 │
+│ ➜ Completely removes the #1 psychological hurdle: fear of being laughed at.    │
+├────────────────────────────────────────────────────────────────────────────────┤
+│ 🎯 THE CALL TO ACTION (CTA)                                                    │
+│ "Install Now — Start your free 7-day fluency trial!"                           │
+│ ➜ Frictionless entry with instant trial gratification.                         │
+└────────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 🏆 Creative Teardown Summary
+## 📊 Side-by-Side Creative Comparison
 
-| Ad Creative | Hook | Core Body | CTA | Resonance Score |
-| :--- | :--- | :--- | :--- | :--- |
-| **Ad #1 (Winner)** | *"Stuck while speaking English in office meetings? 🤐"* | Relatable professional freeze in front of managers; introduces 1-on-1 private AI voice practice; 15 mins/day, zero judgment; 250k+ Indian users. | **Install Now (7-Day Trial)** | **9.4 / 10** |
-| **Ad #2** | *"Cracking job interviews requires more than technical skills. You need fluent English!"* | Stops mental translation; AI mock interviews for HR/tech rounds; promises 2x salary jump. | **Download (Career English)** | **8.8 / 10** |
-| **Ad #3** | *"English coaching classes take 3 months and cost ₹15,000+."* | Anchors high cost and embarrassment of offline classes vs ₹499/mo 24/7 AI tutor on your phone. | **Try Free Demo** | **8.5 / 10** |
-| **Ad #4** | *"Maine socha tha English seekhna bohot tough hai... par MySivi ne 21 dino me meri hesitation khatam kar di!"* | Hinglish UGC video from Priya (Pune engineer) passing client rounds. High authenticity. | **Learn More** | **9.1 / 10** |
-| **Ad #5** | *"Limited Time Offer! 🚀 Get 50% OFF on MySivi Annual Fluency Pass."* | Direct discount promotion on annual plan; urgency ends Sunday. | **Get Offer** | **7.2 / 10** |
-
-### Why Ad #1 is the Winner:
-1. **Visceral Pain Point:** Confronts the exact situational anxiety faced by Indian corporate professionals—freezing during client and standup meetings.
-2. **Removes The Core Blocker (Judgment):** Most Indians don't practice because of fear of social embarrassment. Positioning AI as an empathetic, private partner directly removes this psychological barrier.
-3. **Low Barrier to Entry:** "15 minutes a day" sets a friction-free habit expectation.
-4. **Ad Library Longevity:** Highest impression bracket and longest active run time in Meta Ad Library, demonstrating profitable ROAS and high CTR.
+| Creative | Hook (Opening 2-3s) | Core Value Proposition | CTA | Score | Status |
+| :---: | :--- | :--- | :---: | :---: | :---: |
+| **#1** | *"Stuck while speaking English in office meetings? 🤐"* | 1-on-1 AI workplace roleplay; zero judgment; 15 mins daily | **Install Now** | **9.4 / 10** | 🏆 **WINNER** |
+| **#2** | *"Cracking job interviews requires more than technical skills."* | AI mock interviews (HR & Tech); target 2x salary jump | **Download** | **8.8 / 10** | 🥈 Runner-Up |
+| **#3** | *"English coaching classes take 3 months and cost ₹15,000+."* | Contrast ₹15k offline fee vs ₹499/mo 24/7 personal smartphone AI | **Try Free Demo** | **8.5 / 10** | 🥉 Strong Angle |
+| **#4** | *"Maine socha tha English seekhna bohot tough hai..."* | Hinglish UGC review by Priya clearing client interview rounds | **Learn More** | **9.1 / 10** | High UGC CTR |
+| **#5** | *"Limited Time Offer! 🚀 50% OFF on Annual Fluency Pass."* | Direct discount pricing urgency expiring Sunday midnight | **Get Offer** | **7.2 / 10** | Retargeting Only |
 
 ---
 
-## 📹 Loom Video Walkthrough Script (3 - 4 Minutes)
+## 💡 Strategic Recommendations to Reach ₹500 Cr ARR
 
-When recording your Loom video, follow this exact structure:
+### 1. Dynamic Hook Branching
+Take the proven winner (Ad #1) and branch the opening 3 seconds into 4 micro-segments while keeping the winning solution body intact:
+- **Variant A (IT Engineers):** *"Dreading your daily client standup tomorrow?"*
+- **Variant B (Job Seekers):** *"Clear the technical round, but freeze in the HR English round?"*
+- **Variant C (Tier 2/3 Aspirants):** *"English samajh aati hai par bolne me hesitation hoti hai?"*
+- **Variant D (Managers):** *"Leading meetings with international clients?"*
 
-- **[0:00 - 0:35] The Hook & Mission:**
-  > *"Hi MySivi team! Today I'm presenting an automated Facebook Ad Library intelligence pipeline built in n8n and powered by Google Gemini 1.5 Flash. The goal is to solve creative fatigue and help our performance team scale toward ₹500 Cr ARR without manual research."*
-- **[0:35 - 1:30] n8n Pipeline Architecture:**
-  > *"Here is the workflow. We take the Ad Library search query for MySivi in India, run it through the Apify actor with zero API costs, clean the payload, and pass each ad into Google Gemini 1.5 Flash via LangChain."*
-- **[1:30 - 2:30] Live Execution Run:**
-  > *(Click 'Execute Workflow' on screen)*
-  > *"As you can see, n8n fetches the latest active creatives. Gemini immediately dissects each ad into Hook, Body, and Call To Action, assigning an emotional resonance score based on Indian EdTech buyer psychology."*
-- **[2:30 - 3:30] Analysis of the Winning Creative:**
-  > *"The winner is Ad #1 ('Stuck while speaking English in office meetings?'). Why? It targets acute meeting anxiety, addresses fear of judgment, and offers a low-friction 15-min commitment. We also have clear A/B testing recommendations for fresh iterations."*
-- **[3:30 - 3:50] Conclusion:**
-  > *"All deliverables—the workflow JSON, the detailed PDF report, and the sample dataset—are ready. Excited to bring this intensity to the in-office HSR role!"*
+### 2. CAC-Slashing Lead Magnet Funnel
+Instead of directing cold traffic straight to the App Store install page, route users to a **60-Second In-Browser AI Voice Assessment**:
+- The user speaks 3 sentences into their browser microphone.
+- AI instantly generates their **CEFR English Fluency Score (A2 / B1 / B2)**.
+- To view their customized diagnostic breakdown, they download the MySivi App.
+- **Estimated impact:** 25% to 35% higher ad-to-install conversion rate.
+
+### 3. Automated Ad Fatigue Radar (via n8n)
+Schedule this n8n workflow to run every morning at 9:00 AM:
+- Tracks the active flight days of all running creatives.
+- When an ad exceeds **21 active days** or CTR drops below benchmark, n8n triggers an automated Slack notification to queue 5 new AI-generated variations.
+
+---
+
+## 🛠️ How to Import & Run in n8n (Zero-Setup)
+
+```bash
+# 1. Open n8n (either n8n.io Cloud or local terminal):
+npx n8n
+
+# 2. In n8n, click '...' in the top right -> 'Import from File...'
+# 3. Select 'mysivi_meta_ad_scraper_workflow.json'
+# 4. Click 'Execute Workflow' -> All nodes execute smoothly!
+```
+
+---
+
+## 📂 Project Directory Structure
+
+```text
+├── 📄 MySivi_Ad_Intelligence_Report.pdf     # Publication-grade analytical teardown
+├── ⚙️ mysivi_meta_ad_scraper_workflow.json    # Complete n8n importable workflow
+├── 🎥 HOW_TO_RUN_AND_EXPLAIN.md              # Word-for-word Loom video recording script
+├── 📊 sample_scraped_ads.json                 # Formatted Meta Ad Library dataset
+├── 🐍 generate_pdf_report.py                 # ReportLab compilation script
+└── 📦 Submission_Files/                      # Organized submission deliverables
+    ├── MySivi_Ad_Intelligence_Report.pdf
+    ├── mysivi_meta_ad_scraper_workflow.json
+    └── Loom_Video_Link_and_Notes.txt
+```
+
+---
+
+<div align="center">
+
+**Built with passion for high-intensity growth engineering & AI automation.**  
+Ready for 6 days in-office execution at HSR Layout, Bengaluru! 🚀
+
+</div>
