@@ -14,7 +14,7 @@
 
 <br/>
 
-[📋 Read Executive PDF Report](MySivi_Ad_Intelligence_Report.pdf) • [⚙️ Import n8n Workflow](mysivi_meta_ad_scraper_workflow.json)
+[📋 Read Executive PDF Report](Submission_Files/MySivi_Ad_Library_Creative_Intelligence_Report.pdf) • [⚙️ Import n8n Workflow](mysivi_meta_ad_scraper_workflow.json)
 
 </div>
 
@@ -136,7 +136,6 @@ The winning score is available at `winningAd.performanceScore` (9.4 in the bundl
 ## 📂 Project Directory Structure
 
 ```text
-├── 📄 MySivi_Ad_Intelligence_Report.pdf     # Publication-grade analytical teardown
 ├── ⚙️ mysivi_meta_ad_scraper_workflow.json    # Complete n8n importable workflow
 ├── 📊 sample_scraped_ads.json                 # Formatted Meta Ad Library dataset
 ├── 🐍 generate_pdf_report.py                 # ReportLab compilation script

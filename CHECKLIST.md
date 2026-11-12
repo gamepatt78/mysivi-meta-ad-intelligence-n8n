@@ -12,7 +12,7 @@ GitHub Repo: **[https://github.com/gamepatt78/mysivi-meta-ad-intelligence-n8n](h
 - [x] **Ad Library target analyzed**: Filtered for "MySivi" active ads in India, sorted by impressions.
 - [x] **Hook, Body, and CTA extracted**: Decomposed 5 ad variations into Hook, Body, and CTA with resonance scores.
 - [x] **Winning creative identified**: **Ad #1 ("Workplace Meeting Anxiety")** scored **9.4 / 10**.
-- [x] **PDF report generated**: `MySivi_Ad_Intelligence_Report.pdf` (with executive summary, comparison table, winner teardown, and ₹500 Cr ARR growth strategy).
+- [x] **PDF report generated**: `Submission_Files\MySivi_Ad_Library_Creative_Intelligence_Report.pdf` (with executive summary, comparison table, winner teardown, and ₹500 Cr ARR growth strategy).
 - [x] **n8n workflow compiled**: `mysivi_meta_ad_scraper_workflow.json` (includes both ScheduleTrigger for 24/7 activation and ManualTrigger for live runs).
 - [x] **GitHub repo live**: Pushed to `https://github.com/gamepatt78/mysivi-meta-ad-intelligence-n8n` with modern UI, badges, and Mermaid flowcharts.
 - [x] **Loom script prepared**: Athwin's customized word-for-word 3.5-minute script ready.
@@ -22,7 +22,7 @@ GitHub Repo: **[https://github.com/gamepatt78/mysivi-meta-ad-intelligence-n8n](h
 ## 🎥 PHASE 2: Loom Recording Checklist (Your Action Now)
 - [ ] **Open Browser Tabs**:
   - **Tab 1**: n8n Canvas (with `mysivi_meta_ad_scraper_workflow.json` imported).
-  - **Tab 2**: PDF Report (`MySivi_Ad_Intelligence_Report.pdf`) or GitHub README.
+  - **Tab 2**: PDF Report (`Submission_Files\MySivi_Ad_Library_Creative_Intelligence_Report.pdf`) or GitHub README.
   - **Tab 3**: Live GitHub Repository (`https://github.com/gamepatt78/mysivi-meta-ad-intelligence-n8n`).
 - [ ] **Loom Settings**: Select **Screen + Camera** (bubble camera in corner).
 - [ ] **Recording Run-through (3:15 – 3:45 mins)**:
@@ -37,7 +37,7 @@ GitHub Repo: **[https://github.com/gamepatt78/mysivi-meta-ad-intelligence-n8n](h
 
 ## 📦 PHASE 3: The 3 Required Submission Files
 Check that these 3 files are in your submission folder (`Submission_Files\`):
-- [ ] **File 1 (PDF Results)**: `MySivi_Ad_Intelligence_Report.pdf`
+- [ ] **File 1 (PDF Results)**: `MySivi_Ad_Library_Creative_Intelligence_Report.pdf`
 - [ ] **File 2 (Workflow JSON)**: `mysivi_meta_ad_scraper_workflow.json`
 - [ ] **File 3 (Loom Video & Notes)**: `Loom_Video_Link_and_Notes.txt` *(paste your public Loom link inside line 7)*
 
@@ -58,7 +58,7 @@ I'm Athwin. Here is my submission for the Growth Internship assignment:
 https://github.com/gamepatt78/mysivi-meta-ad-intelligence-n8n
 
 3. Attached Deliverables:
-- MySivi_Ad_Intelligence_Report.pdf (Complete Hook/Body/CTA teardown & ₹500 Cr ARR growth roadmap)
+- Submission_Files\MySivi_Ad_Library_Creative_Intelligence_Report.pdf (Complete Hook/Body/CTA teardown & ₹500 Cr ARR growth roadmap)
 - mysivi_meta_ad_scraper_workflow.json (Importable n8n workflow file)
 
 Summary of Key Findings:
