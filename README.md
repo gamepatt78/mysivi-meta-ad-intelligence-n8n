@@ -20,6 +20,18 @@
 
 ---
 
+## 📦 Submission Files
+
+The `Submission_Files/` directory contains the assignment deliverables:
+
+- [Creative Intelligence Report (PDF)](Submission_Files/MySivi_Ad_Library_Creative_Intelligence_Report.pdf)
+- [Creative Intelligence Report (DOCX)](Submission_Files/MySivi_Ad_Library_Creative_Intelligence_Report.docx)
+- [n8n Workflow](Submission_Files/mysivi_meta_ad_scraper_workflow.json)
+
+The submitted workflow is a prototype with bundled sample ad records and predefined analysis. It does not collect live Facebook Ad Library data or call Gemini.
+
+---
+
 ## 📌 Executive Summary
 
 This repository contains an n8n prototype for organizing and comparing MySivi ad creatives.
@@ -128,6 +140,10 @@ The winning score is available at `winningAd.performanceScore` (9.4 in the bundl
 ├── ⚙️ mysivi_meta_ad_scraper_workflow.json    # Complete n8n importable workflow
 ├── 📊 sample_scraped_ads.json                 # Formatted Meta Ad Library dataset
 ├── 🐍 generate_pdf_report.py                 # ReportLab compilation script
+└── 📦 Submission_Files/
+    ├── MySivi_Ad_Library_Creative_Intelligence_Report.pdf
+    ├── MySivi_Ad_Library_Creative_Intelligence_Report.docx
+    └── mysivi_meta_ad_scraper_workflow.json
 ```
 
 ---
