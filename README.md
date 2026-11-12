@@ -1,21 +1,20 @@
 <div align="center">
 
-# 🚀 MySivi — Meta Ad Creative Intelligence & Automation Engine
-### *Zero-Cost Growth Engineering Pipeline built with n8n & Google Gemini*
+# 🚀 MySivi — Meta Ad Creative Intelligence Demo
+### *n8n prototype: creative analysis using bundled sample ads*
 
 [![n8n Workflow](https://img.shields.io/badge/n8n-Workflow_Automation-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)](https://n8n.io)
-[![Google Gemini](https://img.shields.io/badge/Google_Gemini-1.5_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://aistudio.google.com)
-[![Meta Ad Library](https://img.shields.io/badge/Meta-Ad_Library_Scraper-0081FB?style=for-the-badge&logo=meta&logoColor=white)](https://www.facebook.com/ads/library)
-[![Status](https://img.shields.io/badge/Status-Production_Ready-success?style=for-the-badge)](#)
+[![Data](https://img.shields.io/badge/Data-Bundled_Sample_Ads-blue?style=for-the-badge)](#)
+[![Status](https://img.shields.io/badge/Status-Demo-orange?style=for-the-badge)](#)
 
 <br/>
 
 > **Built for the MySivi Growth Internship Assignment**  
-> *Objective: Automate Facebook Ad Library creative extraction, decompose Hook, Body & CTA, and rank the top-performing creative to scale paid marketing from **₹175 Cr ARR towards ₹500 Cr ARR**.*
+> *Objective: Prototype a workflow for analyzing Facebook Ad Library creatives. The included workflow demonstrates Hook, Body & CTA analysis and ranking on bundled sample data; it does not fetch live ads or call Gemini.*
 
 <br/>
 
-[📋 Read Executive PDF Report](MySivi_Ad_Intelligence_Report.pdf) • [⚙️ Import n8n Workflow](mysivi_meta_ad_scraper_workflow.json) • [🎥 Loom Walkthrough Script](HOW_TO_RUN_AND_EXPLAIN.md) • [📦 Submission Deliverables](Submission_Files/)
+[📋 Read Executive PDF Report](MySivi_Ad_Intelligence_Report.pdf) • [⚙️ Import n8n Workflow](mysivi_meta_ad_scraper_workflow.json)
 
 </div>
 
@@ -23,23 +22,23 @@
 
 ## 📌 Executive Summary
 
-**MySivi** is India's 1st AI English Speaking Tutor, empowering hundreds of thousands of users to overcome hesitation without the fear of social judgment. 
+This repository contains an n8n prototype for organizing and comparing MySivi ad creatives.
 
-As MySivi expands toward **₹500 Cr ARR**, marketing efficiency hinges on rapid creative iteration, eliminating ad fatigue, and aggressively lowering Customer Acquisition Cost (CAC). This pipeline automates the entire creative audit lifecycle:
+The included workflow uses five ad records embedded in a Code node, applies predefined JavaScript analysis and scores, then ranks the results. It is self-contained for demonstration, but it does **not** scrape the Facebook Ad Library, invoke Google Gemini, or provide live performance data. The diagram shows the behavior of the included workflow:
 
 ```mermaid
 flowchart LR
-    A["🎯 Facebook Ad Library<br/>(MySivi India Campaigns)"] --> B["⚡ Apify / Ingestion Engine<br/>(Ad Copies, CTAs, Flight Time)"]
-    B --> C["🤖 Google Gemini 1.5 Flash<br/>(Extract Hook, Body & CTA)"]
-    C --> D["📊 Resonance Ranker<br/>(Score: 0 - 10)"]
-    D --> E["🏆 Scaling Winner<br/>(Ad #1: Meeting Anxiety)"]
+    A["Manual or Schedule Trigger"] --> B["Set Search Parameters"]
+    B --> C["Bundled Sample Ad Records"]
+    C --> D["JavaScript Analysis & Predefined Scores"]
+    D --> E["Ranked Summary Output"]
 ```
 
 ---
 
 ## 🏆 Top Performing Creative Teardown
 
-Out of all active creatives analyzed from the [MySivi Facebook Ad Library](https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&is_targeted_country=false&media_type=all&q=%22MySivi%22&search_type=keyword_exact_phrase&sort_data%5Bdirection%5D=desc&sort_data%5Bmode%5D=total_impressions), **Ad #1 emerged as the clear winner**:
+In the workflow's bundled sample data, **Ad #1 ranks highest**. These figures are illustrative sample values, not results from a live Ad Library scrape:
 
 <div align="center">
 
@@ -75,7 +74,9 @@ Out of all active creatives analyzed from the [MySivi Facebook Ad Library](https
 
 ---
 
-## 📊 Side-by-Side Creative Comparison
+## 📊 Side-by-Side Sample Creative Comparison
+
+The following comparisons and scores are predefined in the bundled demo data; they are not independently verified live campaign results.
 
 | Creative | Hook (Opening 2-3s) | Core Value Proposition | CTA | Score | Status |
 | :---: | :--- | :--- | :---: | :---: | :---: |
@@ -90,7 +91,7 @@ Out of all active creatives analyzed from the [MySivi Facebook Ad Library](https
 ## 💡 Strategic Recommendations to Reach ₹500 Cr ARR
 
 ### 1. Dynamic Hook Branching
-Take the proven winner (Ad #1) and branch the opening 3 seconds into 4 micro-segments while keeping the winning solution body intact:
+Use the sample-data winner (Ad #1) as a hypothesis to test. Branch the opening 3 seconds into 4 micro-segments while keeping the solution body intact:
 - **Variant A (IT Engineers):** *"Dreading your daily client standup tomorrow?"*
 - **Variant B (Job Seekers):** *"Clear the technical round, but freeze in the HR English round?"*
 - **Variant C (Tier 2/3 Aspirants):** *"English samajh aati hai par bolne me hesitation hoti hai?"*
@@ -103,23 +104,20 @@ Instead of directing cold traffic straight to the App Store install page, route 
 - To view their customized diagnostic breakdown, they download the MySivi App.
 - **Estimated impact:** 25% to 35% higher ad-to-install conversion rate.
 
-### 3. Automated Ad Fatigue Radar (via n8n)
-Schedule this n8n workflow to run every morning at 9:00 AM:
-- Tracks the active flight days of all running creatives.
-- When an ad exceeds **21 active days** or CTR drops below benchmark, n8n triggers an automated Slack notification to queue 5 new AI-generated variations.
+### 3. Future: Automated Ad Fatigue Radar
+The current workflow does not monitor live ad flight times, check CTR, or send Slack notifications. Those could be added as a future extension using a live data source and notification integration.
 
 ---
 
-## 🛠️ How to Import & Run in n8n (Zero-Setup)
+## 🛠️ How to Run in n8n
 
-```bash
-# 1. Open n8n (either n8n.io Cloud or local terminal):
-npx n8n
+1. Open the published workflow in your n8n workspace, or import [`mysivi_meta_ad_scraper_workflow.json`](mysivi_meta_ad_scraper_workflow.json) into n8n.
+2. Click **Execute workflow** and choose the **Manual** trigger.
+3. Open **Output Results & Summary** to inspect the five sample ads and their ranking.
 
-# 2. In n8n, click '...' in the top right -> 'Import from File...'
-# 3. Select 'mysivi_meta_ad_scraper_workflow.json'
-# 4. Click 'Execute Workflow' -> All nodes execute smoothly!
-```
+No API credentials are required for this sample-data demo. To use live ads or Gemini, replace the sample and JavaScript analysis nodes and configure the required credentials in n8n. Do not put API keys in this repository.
+
+The winning score is available at `winningAd.performanceScore` (9.4 in the bundled sample). The current `winningReason` text may display `undefined/10` because of a field-name mismatch; use the score field for the numeric result.
 
 ---
 
@@ -128,13 +126,8 @@ npx n8n
 ```text
 ├── 📄 MySivi_Ad_Intelligence_Report.pdf     # Publication-grade analytical teardown
 ├── ⚙️ mysivi_meta_ad_scraper_workflow.json    # Complete n8n importable workflow
-├── 🎥 HOW_TO_RUN_AND_EXPLAIN.md              # Word-for-word Loom video recording script
 ├── 📊 sample_scraped_ads.json                 # Formatted Meta Ad Library dataset
 ├── 🐍 generate_pdf_report.py                 # ReportLab compilation script
-└── 📦 Submission_Files/                      # Organized submission deliverables
-    ├── MySivi_Ad_Intelligence_Report.pdf
-    ├── mysivi_meta_ad_scraper_workflow.json
-    └── Loom_Video_Link_and_Notes.txt
 ```
 
 ---
